@@ -1,9 +1,11 @@
 ---
 title: Introduction to Greed
-description: Discover the Greed Discord bot, a powerful tool for automating moderation, leveling, and engagement in your Discord server to enhance community management.
+description: >-
+  Discover the Greed Discord bot, a powerful tool for automating moderation,
+  leveling, and engagement in your Discord server to enhance community
+  management.
 ---
-
-<Callout kind="info" title="Starter Kit Template">
+<Callout kind="info" collapsed="false">
   This documentation was generated as a starter kit template based on your brand. Please review and customize the content to accurately reflect your product's features, APIs, and capabilities.
 </Callout>
 
@@ -17,14 +19,16 @@ With Greed, you protect your server from mass joins, reward active members with 
 
 Explore the core capabilities that make Greed essential for Discord server owners.
 
-<Columns cols={3}>
-  <Card title="Advanced Moderation" icon="shield" href="/moderation">
+<Columns cols="3">
+  <Card title="Advanced Moderation" href="/moderation" icon="shield" horizontal="false">
     Automate punishments, anti-raid measures, and channel locks to maintain order effortlessly.
   </Card>
-  <Card title="Leveling System" icon="award" href="/leveling">
+
+  <Card title="Leveling System" href="/leveling" icon="award" horizontal="false">
     Reward user activity with levels, roles, and custom rewards to boost engagement.
   </Card>
-  <Card title="Engagement Tools" icon="zap" href="/engagement">
+
+  <Card title="Engagement Tools" href="/engagement" icon="zap" horizontal="false">
     Use custom commands, embeds, and automations to make your server interactive and fun.
   </Card>
 </Columns>
@@ -35,7 +39,7 @@ You save time on manual moderation while fostering a vibrant community. Greed ha
 
 Leveling motivates participation—users earn XP from messages and voice activity. Premium features unlock deeper customization for larger servers.
 
-<Callout kind="tip">
+<Callout kind="tip" collapsed="false">
   Start by inviting Greed to your server for immediate protection and setup.
 </Callout>
 
@@ -44,30 +48,30 @@ Leveling motivates participation—users earn XP from messages and voice activit
 Get Greed running in minutes.
 
 <Steps>
-  <Step title="Invite Greed" icon="download">
+  <Step title="Invite Greed" icon="download" title-type="p">
     Click the invite link and authorize the bot in your Discord server.
 
     ```
     https://greed.best/invite
     ```
   </Step>
-  <Step title="Configure Basics" icon="settings">
+
+  <Step title="Configure Basics" icon="settings" title-type="p">
     Use setup commands to enable key features.
 
-````bash
-,setup moderation
-,antiraid massjoin on --threshold 5 --do kick --lock true
-````
-
+    ```javascript
+    ,setup moderation
+    ,antiraid massjoin on --threshold 5 --do kick --lock true
+    ```
   </Step>
-  <Step title="Test Leveling" icon="play">
+
+  <Step title="Test Leveling" icon="play" title-type="p">
     Have members chat to see XP gains.
 
-````bash
-!level @user
-!leaderboard
-````
-
+    ```bash
+    !level @user
+    !leaderboard
+    ```
   </Step>
 </Steps>
 
@@ -75,28 +79,35 @@ Get Greed running in minutes.
 
 Dive deeper into Greed's documentation.
 
-<Columns cols={2}>
-  <Card title="Quickstart Guide" icon="book-open" href="/quickstart">
+<Columns cols="2">
+  <Card title="Quickstart Guide" href="/quickstart" icon="book-open" horizontal="false">
     Complete server setup step-by-step.
   </Card>
-  <Card title="Authentication & Premium" icon="lock" href="/authentication">
+
+  <Card title="Authentication & Premium" href="/authentication" icon="lock" horizontal="false">
     Manage logins and unlock premium features.
   </Card>
-  <Card title="Commands Reference" icon="terminal" href="/commands">
+
+  <Card title="Commands Reference" href="/commands" icon="terminal" horizontal="false">
     Full list of bot commands and usage.
   </Card>
-  <Card title="Changelog" icon="git-branch" href="/changelog">
+
+  <Card title="Changelog" href="/changelog" icon="git-branch" horizontal="false">
     Stay updated with the latest releases.
   </Card>
 </Columns>
 
 <Expandable title="Frequently Asked Questions" default-open="true">
   ### How do I enable premium features?
+
   Visit [greed.best/premium](https://greed.best/premium) and subscribe via Discord login.
 
   ### Where can I view status?
+
   Check real-time uptime at [greed.best/status](https://greed.best/status).
 
   ### Need help?
+
   Join the support server linked in the bot's DMs.
 </Expandable>
+
