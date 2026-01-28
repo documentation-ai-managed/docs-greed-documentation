@@ -1,0 +1,108 @@
+---
+title: Changelog
+description: Track the latest updates, bug fixes, and new features added to the Greed Discord bot.
+---
+
+## Stay Updated
+
+<Callout kind="info" title="Get Notifications">
+Subscribe to the Greed Discord server or check the status page to receive real-time updates on new releases and important fixes. Enable notifications for the announcements channel.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="Status Page" icon="activity" href="https://greed.best/status">
+    Monitor live bot status and uptime.
+  </Card>
+  <Card title="Commands List" icon="list" href="https://greed.best/commands">
+    Explore all available commands.
+  </Card>
+  <Card title="Premium Features" icon="star" href="https://greed.best/premium">
+    Unlock advanced moderation tools.
+  </Card>
+</Columns>
+
+## Recent Releases
+
+<Update label="2024-10-20" description="v2.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added `antiraid massjoin` command with configurable threshold, kick action, channel lock, and punishment options.
+- Introduced VoiceMaster system for automated voice channel management.
+
+## Improvements
+
+- Enhanced embed customization for better visual appeal in moderation logs.
+- Optimized leveling system performance for larger servers.
+
+## Bug Fixes
+
+- Resolved issue with command permissions not applying correctly in protected channels.
+- Fixed notification delays in real-time engagement tools.
+
+</Update>
+
+<Update label="2024-10-05" description="v2.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Premium antiraid suite with mass join protection and automated responses.
+- Advanced rules command integration for channel-specific moderation.
+
+## Breaking Changes
+
+- Updated command syntax for `rules` and `commands` to use slash commands exclusively.
+- Removed legacy prefix support; migrate using `/setup`.
+
+## Bug Fixes
+
+- Corrected embed rendering issues on mobile Discord clients.
+- Patched potential exploit in leveling reward distribution.
+
+</Update>
+
+<Update label="2024-09-15" description="v1.5.0" tags={["bugfix", "improvement"]}>
+
+## Improvements
+
+- Faster response times for high-traffic servers with 0+ users.
+- Better integration with Discord's latest API updates.
+
+## Bug Fixes
+
+- Fixed crash on server join during mass events.
+- Resolved embed image loading failures for custom assets.
+
+</Update>
+
+## How to Update
+
+Follow these steps to ensure your server runs the latest version of Greed.
+
+<Steps>
+  <Step title="Check Current Version" icon="info">
+    Use the `/version` command in your server to verify your installed version.
+  </Step>
+  <Step title="Reinvite Bot" icon="download">
+    Visit [https://greed.best/invite](https://greed.best/invite) and re-add Greed with updated permissions.
+  </Step>
+  <Step title="Run Setup" icon="settings">
+````bash
+/setup
+````
+    Re-run the setup command to apply new configurations.
+  </Step>
+  <Step title="Test Features" icon="check-circle">
+    Test new commands like `/antiraid massjoin on --threshold 5`.
+  </Step>
+</Steps>
+
+## Full Changelog
+
+<Expandable title="View Older Releases" default-open="false">
+For a complete history of all changes, including minor patches and security updates, refer to the [GitHub repository](https://github.com/greed-bot/changelog) or join the support Discord.
+</Expandable>
+
+<Callout kind="tip" title="Report Issues">
+Found a bug in the latest release? Use `/feedback` in your server or join the community Discord for support.
+</Callout>

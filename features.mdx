@@ -1,0 +1,135 @@
+---
+title: Exploring Greed Features
+description: Dive into the core capabilities of Greed, from advanced moderation to analytics, to build and maintain an active community.
+---
+
+## Overview
+
+Greed provides powerful tools to automate Discord server management. You can set up auto-moderation to handle spam and raids, configure leveling systems for user engagement, access analytics for insights, and create custom welcome messages. These features help you maintain a safe, active community without constant manual intervention.
+
+<Callout kind="tip">
+Start with basic moderation setup before enabling advanced features like leveling rewards.
+</Callout>
+
+## Key Features
+
+Discover the main capabilities through these feature highlights.
+
+<Columns cols={2}>
+  <Card title="Auto-Moderation" icon="shield" href="#auto-moderation">
+    Protect your server from spam, raids, and toxic behavior automatically.
+  </Card>
+  <Card title="Leveling System" icon="trending-up" href="#leveling">
+    Reward active members with roles and perks based on engagement.
+  </Card>
+  <Card title="Server Analytics" icon="bar-chart" href="#analytics">
+    Gain insights into member activity, growth, and usage patterns.
+  </Card>
+  <Card title="Welcome Tools" icon="users" href="#welcome">
+    Customize greetings and community engagement automations.
+  </Card>
+</Columns>
+
+## Setting Up Auto-Moderation and Raid Protection
+
+Protect your server by enabling anti-raid and moderation tools. Use slash commands or prefix-based commands like `,antiraid`.
+
+<Steps>
+  <Step title="Enable Mass Join Protection" icon="lock">
+    Configure raid protection for sudden member spikes.
+
+````bash
+,antiraid massjoin on --threshold 5 --do kick --lock true --punish true
+````
+
+    This sets a threshold of `>5` joins in a short time, kicks raiders, locks channels, and punishes new members.
+  </Step>
+  <Step title="Set Up Auto-Moderation" icon="shield">
+    Enable filters for spam and bad words.
+
+````bash
+,automod on --spam true --links false --wordfilter true
+````
+  </Step>
+  <Step title="Test Configuration" icon="check-circle">
+    Simulate a raid or spam to verify settings work as expected.
+  </Step>
+</Steps>
+
+<Callout kind="alert">
+Always test moderation in a private channel to avoid false positives on legitimate users.
+</Callout>
+
+## Configuring the Level System and Rewards
+
+The leveling system tracks user activity like messages and reactions, assigning XP and roles at milestones.
+
+<Tabs>
+  <Tab title="Basic Setup" icon="settings">
+    Start with default configuration.
+
+````bash
+,leveling on
+````
+
+    Users gain XP per message. Customize rates with `,leveling xp rate 15-25`.
+  </Tab>
+  <Tab title="Role Rewards" icon="award">
+    Assign roles at specific levels.
+
+````bash
+,leveling reward add 10 @Member --role-id 123456789
+,leveling reward add 50 @Veteran --role-id 987654321
+````
+  </Tab>
+</Tabs>
+
+## Using Server Analytics for Insights
+
+Monitor your server's health with built-in analytics.
+
+| Metric | Description | Command |
+|--------|-------------|---------|
+| Member Growth | Tracks daily/weekly joins/leaves | `,analytics growth` |
+| Active Users | Top message senders | `,analytics top` |
+| Channel Usage | Most/least active channels | `,analytics channels` |
+
+View real-time data via `,analytics dashboard` for visual charts.
+
+<Expandable title="Advanced Analytics Filters" default-open="false">
+Filter by time range or user roles for deeper insights.
+
+````bash
+,analytics top --time 7d --role Moderator
+````
+</Expandable>
+
+## Creating Custom Welcome and Community Tools
+
+Set up personalized welcomes and automations to boost engagement.
+
+<CodeGroup tabs="Welcome,Leave">
+```bash
+,welcome on --channel #general --message "Welcome {user} to {server}! Check {rules}"
+```
+
+```bash
+,leave on --channel #logs --message "{user} left after level {level}"
+```
+</CodeGroup>
+
+Customize embeds with colors matching your brand, like `#B3A4C8`.
+
+## Next Steps
+
+<Columns cols={3}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Get Greed running in minutes.
+  </Card>
+  <Card title="Commands Reference" icon="book-open" href="/commands">
+    Full list of available commands.
+  </Card>
+  <Card title="Premium Features" icon="star" href="/premium">
+    Unlock advanced tools.
+  </Card>
+</Columns>

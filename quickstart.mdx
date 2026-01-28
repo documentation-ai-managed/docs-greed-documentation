@@ -1,0 +1,111 @@
+---
+title: Getting Started with Greed
+description: Learn how to add the Greed bot to your Discord server, authorize it, and run your first commands for immediate setup.
+---
+
+## Prerequisites
+
+<Callout kind="info" title="Before You Begin">
+Ensure you have:
+- Administrator permissions on your Discord server
+- A Discord account with server ownership or high-level admin rights
+- Access to the server settings for role and channel management
+</Callout>
+
+Greed requires specific permissions to manage moderation, leveling, and engagement features effectively. Review the [official invite link](https://greed.best/invite) for the full permission list before proceeding.
+
+## Invite Greed to Your Server
+
+Follow these steps to add Greed to your Discord server quickly.
+
+<Steps>
+  <Step title="Visit the Invite Link" icon="external-link">
+    Open the [Greed invite page](https://greed.best/invite) in your browser.
+  </Step>
+  <Step title="Select Your Server" icon="server">
+    Choose the Discord server from the dropdown where you want to add Greed.
+    
+    Ensure you have admin rights on the selected server.
+  </Step>
+  <Step title="Authorize Permissions" icon="shield">
+    Review and grant the required permissions, including `Manage Channels`, `Manage Roles`, `Send Messages`, `Manage Messages`, and `Kick/Ban Members`.
+    
+    Click **Authorize** to complete the invitation.
+  </Step>
+</Steps>
+
+## Configure Initial Settings
+
+Once added, Greed appears in your member list. Use prefix commands (starting with `,`) for setup.
+
+<Tabs>
+  <Tab title="Anti-Raid Setup" icon="shield">
+    Protect your server from raids immediately.
+    
+````bash
+,antiraid massjoin on --threshold 5 --do kick --lock true --punish true
+````
+
+    This sets a threshold of 5 joins, kicks raiders, locks channels, and punishes new members.
+  </Tab>
+  <Tab title="Rules Channel" icon="book-open">
+    Set up an automated rules channel.
+    
+````bash
+,rules create #rules
+````
+
+    Greed will populate the channel with customizable server rules.
+  </Tab>
+  <Tab title="Leveling Enable" icon="award">
+    Activate the leveling system.
+    
+````bash
+,leveling enable
+````
+  </Tab>
+</Tabs>
+
+## Verify Bot Functionality
+
+Test Greed's responsiveness with a simple command.
+
+<CodeGroup tabs="Ping,Status">
+````bash
+,ping
+````
+
+Expected response: `Pong! Latency: {latency}ms`
+
+````bash
+,status
+````
+
+Expected response: Bot status and uptime information.
+</CodeGroup>
+
+<Callout kind="success">
+  If you see checkmark responses (✅) and configuration confirmations, Greed is ready!
+</Callout>
+
+## Next Steps
+
+Explore more features to enhance your server.
+
+<Columns cols={3}>
+  <Card title="Commands" icon="terminal" href="https://greed.best/commands">
+    Full list of moderation and utility commands.
+  </Card>
+  <Card title="Premium Features" icon="star" href="https://greed.best/premium">
+    Unlock advanced tools like custom embeds and analytics.
+  </Card>
+  <Card title="Documentation" icon="book-open" href="https://docs.greed.best/">
+    In-depth guides and troubleshooting.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  - **Bot offline?** Check [status page](https://greed.best/status).
+  - **Permissions missing?** Re-invite with full scopes.
+  - **Commands not working?** Ensure the bot role is above others in hierarchy.
+</Expandable>

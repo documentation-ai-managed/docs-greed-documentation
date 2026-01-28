@@ -1,0 +1,102 @@
+---
+title: Introduction to Greed
+description: Discover the Greed Discord bot, a powerful tool for automating moderation, leveling, and engagement in your Discord server to enhance community management.
+---
+
+<Callout kind="info" title="Starter Kit Template">
+  This documentation was generated as a starter kit template based on your brand. Please review and customize the content to accurately reflect your product's features, APIs, and capabilities.
+</Callout>
+
+## Overview
+
+Greed is a powerful Discord bot designed to elevate your server management. You gain advanced automation for moderation, leveling systems, and community engagement tools. Automate repetitive tasks like anti-raid protection and voice management, so you focus on growing your community.
+
+With Greed, you protect your server from mass joins, reward active members with levels, and keep channels organized. Powering thousands of communities, it combines sleek embeds with robust functionality.
+
+## Key Features
+
+Explore the core capabilities that make Greed essential for Discord server owners.
+
+<Columns cols={3}>
+  <Card title="Advanced Moderation" icon="shield" href="/moderation">
+    Automate punishments, anti-raid measures, and channel locks to maintain order effortlessly.
+  </Card>
+  <Card title="Leveling System" icon="award" href="/leveling">
+    Reward user activity with levels, roles, and custom rewards to boost engagement.
+  </Card>
+  <Card title="Engagement Tools" icon="zap" href="/engagement">
+    Use custom commands, embeds, and automations to make your server interactive and fun.
+  </Card>
+</Columns>
+
+## Benefits for Server Owners
+
+You save time on manual moderation while fostering a vibrant community. Greed handles mass join raids by kicking offenders and locking channels. Set thresholds like 5 joins in a minute, and enable punishments automatically.
+
+Leveling motivates participation—users earn XP from messages and voice activity. Premium features unlock deeper customization for larger servers.
+
+<Callout kind="tip">
+  Start by inviting Greed to your server for immediate protection and setup.
+</Callout>
+
+## Quick Start
+
+Get Greed running in minutes.
+
+<Steps>
+  <Step title="Invite Greed" icon="download">
+    Click the invite link and authorize the bot in your Discord server.
+
+    ```
+    https://greed.best/invite
+    ```
+  </Step>
+  <Step title="Configure Basics" icon="settings">
+    Use setup commands to enable key features.
+
+````bash
+,setup moderation
+,antiraid massjoin on --threshold 5 --do kick --lock true
+````
+
+  </Step>
+  <Step title="Test Leveling" icon="play">
+    Have members chat to see XP gains.
+
+````bash
+!level @user
+!leaderboard
+````
+
+  </Step>
+</Steps>
+
+## Next Steps
+
+Dive deeper into Greed's documentation.
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="book-open" href="/quickstart">
+    Complete server setup step-by-step.
+  </Card>
+  <Card title="Authentication & Premium" icon="lock" href="/authentication">
+    Manage logins and unlock premium features.
+  </Card>
+  <Card title="Commands Reference" icon="terminal" href="/commands">
+    Full list of bot commands and usage.
+  </Card>
+  <Card title="Changelog" icon="git-branch" href="/changelog">
+    Stay updated with the latest releases.
+  </Card>
+</Columns>
+
+<Expandable title="Frequently Asked Questions" default-open="true">
+  ### How do I enable premium features?
+  Visit [greed.best/premium](https://greed.best/premium) and subscribe via Discord login.
+
+  ### Where can I view status?
+  Check real-time uptime at [greed.best/status](https://greed.best/status).
+
+  ### Need help?
+  Join the support server linked in the bot's DMs.
+</Expandable>

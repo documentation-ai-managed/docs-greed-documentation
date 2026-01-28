@@ -1,0 +1,214 @@
+---
+title: Greed Command Reference
+description: A comprehensive guide to all available Greed bot commands, including syntax, examples, and usage for server administration.
+---
+
+## Overview
+
+Greed provides a robust set of commands for moderating your Discord server, managing user levels, and boosting engagement. All commands use the comma (`,`) prefix by default. You must have appropriate permissions to execute them.
+
+<Callout kind="info">
+Ensure the bot has the necessary permissions like `Kick Members`, `Ban Members`, and `Manage Channels` before using moderation commands.
+</Callout>
+
+## Popular Commands
+
+<Columns cols={3}>
+  <Card title="Anti-Raid" icon="shield" href="#moderation-commands">
+    Protect your server from mass joins and raids.
+  </Card>
+  <Card title="Level Up" icon="trending-up" href="#leveling-commands">
+    Manage XP and leaderboards.
+  </Card>
+  <Card title="Rules" icon="book-open" href="#utility-commands">
+    Set and display server rules.
+  </Card>
+</Columns>
+
+## Moderation Commands
+
+Use these for server protection and user management.
+
+<Tabs>
+  <Tab title="Kick User" icon="user-x">
+
+    Kick a disruptive member from the server.
+
+    <Request tabs="cURL,Discord" show-lines="true">
+```bash
+curl -X POST https://discord.com/api/v10/channels/{channel}/messages \
+  -H "Authorization: Bot YOUR_BOT_TOKEN" \
+  -d '{"content": ",kick @username Reason for kick"}'
+```
+
+```
+,kick @woeful Spamming channels
+```
+    </Request>
+
+    <Response tabs="Success,Error">
+```json
+{
+  "content": "✅ @woeful: Kicked from the server. Reason: Spamming channels",
+  "embeds": [{"title": "Moderation Log"}]
+}
+```
+
+```json
+{
+  "content": "❌ Insufficient permissions to kick @woeful",
+  "embeds": []
+}
+```
+    </Response>
+
+  </Tab>
+  <Tab title="Anti-Raid" icon="alert-triangle">
+
+    Configure mass join protection.
+
+    <Request show-lines="false">
+```
+,antiraid massjoin on --threshold 5 --do kick --lock true --punish true
+```
+    </Request>
+
+    <Response>
+```json
+{
+  "content": "✅ @woeful: Updated massjoin antiraid. Punishment set to kick, threshold set to 5, lock channels set to True, punish new members set to True"
+}
+```
+    </Response>
+
+  </Tab>
+  <Tab title="Ban User" icon="ban">
+
+    Permanently ban a user.
+
+    <Request>
+```
+,ban @username Permanent ban for violations
+```
+    </Request>
+
+  </Tab>
+</Tabs>
+
+<ParamField path="user" param-type="mention" required="true">
+  The Discord user to moderate.
+</ParamField>
+
+<ParamField path="reason" param-type="string" required="false">
+  Optional reason for the action.
+</ParamField>
+
+## Leveling and XP Commands
+
+Track and reward user activity with XP systems.
+
+<Steps>
+  <Step title="Enable Leveling" icon="play">
+    Turn on the XP system for your server.
+
+````bash
+,leveling enable
+````
+
+  </Step>
+  <Step title="Check Leaderboard" icon="bar-chart-3">
+
+````bash
+,rank leaderboard
+````
+
+    Displays top users by XP.
+
+  </Step>
+  <Step title="Reset User XP" icon="refresh-cw">
+    Reset XP for a specific user.
+
+````bash
+,leveling reset @username
+````
+
+  </Step>
+</Steps>
+
+<CodeGroup tabs="Leaderboard,XP Reset">
+```bash
+,rank leaderboard --top 10
+```
+
+```bash
+,leveling reset @woeful --confirm
+```
+</CodeGroup>
+
+## Utility and Engagement Commands
+
+Enhance server interaction.
+
+<Tabs>
+  <Tab title="Rules" icon="file-text">
+
+    Set custom rules.
+
+    <Request>
+```
+,rules set #rules-channel
+```
+    </Request>
+
+    <Response>
+```json
+{
+  "content": "✅ Rules channel set to #rules-channel"
+}
+```
+    </Response>
+
+  </Tab>
+  <Tab title="Embeds" icon="message-circle">
+
+    Create custom embed messages.
+
+````bash
+,embed create "Welcome to the server!" --color #B3A4C8 --footer "Greed BOT"
+````
+
+  </Tab>
+</Tabs>
+
+## Error Handling
+
+Greed commands include built-in error responses for common issues.
+
+<Expandable title="Common Errors" default-open="true">
+
+- **Missing Permissions**: Bot replies with `❌ Missing permissions for this action.`
+- **Invalid Arguments**: `❌ Invalid user mention or threshold value. Use --help for syntax.`
+- **Rate Limited**: `⏳ Slow down! Try again in 5 seconds.`
+
+Always check the `--help` flag for command details:
+
+```
+,antiraid --help
+```
+
+</Expandable>
+
+<Callout kind="tip" title="Pro Tip">
+Prefix can be changed via `,prefix set !` in admin channels. Test commands in a test server first.
+</Callout>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Set up Greed in minutes.
+  </Card>
+  <Card title="Authentication" icon="key" href="/authentication">
+    Manage bot permissions.
+  </Card>
+</Columns>
